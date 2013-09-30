@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 
-	void FixedUpdate () {
+	void Update () {
 		if (playerisdead == true){
 		  //	GameObject player = Instantiate(Resources.Load("Player"),new Vector3(0,0,0), transform.rotation) as GameObject;
 			//player.name = "Player";

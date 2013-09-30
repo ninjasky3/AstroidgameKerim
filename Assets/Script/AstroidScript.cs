@@ -4,19 +4,19 @@ using System.Collections;
 public class AstroidScript : MonoBehaviour {
 	public bool playerisdead;
 	public bool astroidboom;
-	 private int AllAstroids;
+	public static int AllAstroids;
 	private int count;
 	// Use this for initialization
 	void Start () {
-		GameObject[] Astroids = GameObject.FindGameObjectsWithTag("Enemys");
-		AllAstroids = Astroids.Length;
+		//GameObject[] Astroids = GameObject.FindGameObjectsWithTag("Enemys");
 		
+		AllAstroids = 9;
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-			Debug.Log(AllAstroids);
+			
 		if (AllAstroids == 0){
 		Application.LoadLevel ("WinScreen");	
 		}
@@ -45,6 +45,8 @@ public class AstroidScript : MonoBehaviour {
 		if (col.collider.gameObject.name == "Bullet")
 		{
 			Instantiate(Resources.Load("Explosion"), transform.position, transform.rotation);
+			AllAstroids --;
+			Debug.Log(AllAstroids);
 		astroidboom = true;
 		Destroy(col.gameObject);	
 		}
